@@ -15,7 +15,7 @@ public class StudentController {
 
     // build add student rest api
     @PostMapping
-    public ResponseEntity<StudentDto> createStudent(@RequestBody StudentDto studentDto){
+    public ResponseEntity<StudentDto> createStudent(@Valid @RequestBody StudentDto studentDto){
         StudentDto savedStudent = studentService.createStudent(studentDto);
         return new ResponseEntity<>(savedStudent, HttpStatus.CREATED);
     }

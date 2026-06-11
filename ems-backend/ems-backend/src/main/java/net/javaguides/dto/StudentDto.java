@@ -11,7 +11,12 @@ import lombok.Setter;
 @AllArgsConstructor
 public class StudentDto {
     private Long id;
+
+    @NotBlank(message = "First name cannot be empty")
     private String firstName;
+
     private String lastName;
+
+    @Email(message = "Invalid email format")
     private String email;
 }
